@@ -11,4 +11,11 @@ class ClientController{
     public static function form(){
         include 'View/modules/Client/FormClient.php';
     }
+
+    # salva o formulário no banco
+    public static function save(){
+
+        var_dump($_POST);
+        
+    }
 }
