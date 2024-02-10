@@ -14,6 +14,9 @@ switch($url){
     case '/client/form':
         ClientController::form();
         break;
+    case '/client/form/save':
+        ClientController::save();
+        break;    
     default:
         echo "Erro 404!";
         break;        
