@@ -1,24 +1,40 @@
 <?php
 
+// Classe responsável por processar as requisições do usuário.
 class ClientController{
     
-    # retorna a listagem dos clientes cadastrados
+    // retorna uma view com a listagem dos clientes cadastrados
     public static function index(){
-        include 'View/modules/Client/ListClient.php';
+
+        include 'model/ClientModel.php';
+
+        $clientmodel = new ClientModel();
+        $clientmodel->getAllRows();
+
+        include 'view/modules/Client/ListClient.php';
     }
 
-    # retorna a página de cadastro de cliente
+    // retorna uma view contendo um formulário para cadastro de cliente.
     public static function form(){
-        include 'View/modules/Client/FormClient.php';
+
+        include 'model/ClientModel.php';
+
+        $clientmodel = new ClientModel();
+
+        if(isset($_GET['id'])) // Verificando se existe uma variável $_GET
+            $clientmodel = $clientmodel->getById( (int) $_GET['id']); // obtendo o model preenchido vindo da DAO.
+
+        include 'view/modules/Client/FormClient.php';
     }
 
-    # salva o formulário no banco
+    // preenche um model para que seja enviado ao BD para salvar.
     public static function save(){
 
        include 'model/ClientModel.php';
 
        $clientModel = new ClientModel();
 
+       $clientModel->id = $_POST['id'];
        $clientModel->nome = $_POST['nome'];
        $clientModel->sexo = $_POST['sexo'];
        $clientModel->cpf = $_POST['cpf'];
@@ -33,6 +49,17 @@ class ClientController{
 
        $clientModel->save();
 
-       header("Location: /client");       
+       header("Location: /client");      
+    }
+
+    public static function delete(){
+
+        include 'model/ClientModel.php';
+
+        $clientModel = new ClientModel();
+
+        $clientModel->delete( (int) $_GET['id'] );
+
+        header("Location: /client");
     }
 }
