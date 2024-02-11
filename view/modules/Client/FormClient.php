@@ -13,10 +13,10 @@
 <body>
     <fieldset>
         <legend>Cadastro de Cliente</legend>
-        <form method="post" action="/client/form/save">
+        <form method="POST" action="/client/form/save">
 
-            <label for="name">Name:</label>
-            <input id="name" name="name" type="text"/>
+            <label for="nome">Nome:</label>
+            <input id="nome" name="nome" type="text"/>
 
             <label for="sexo">Sexo:</label>
             <input id="sexo" name="sexo" type="text"/>
