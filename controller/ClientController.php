@@ -8,8 +8,8 @@ class ClientController{
 
         include 'model/ClientModel.php';
 
-        $clientmodel = new ClientModel();
-        $clientmodel->getAllRows();
+        $clientModel = new ClientModel();
+        $clientModel->getAllRows();
 
         include 'view/modules/Client/ListClient.php';
     }
@@ -19,10 +19,10 @@ class ClientController{
 
         include 'model/ClientModel.php';
 
-        $clientmodel = new ClientModel();
+        $clientModel = new ClientModel();
 
         if(isset($_GET['id'])) // Verificando se existe uma variável $_GET
-            $clientmodel = $clientmodel->getById( (int) $_GET['id']); // obtendo o model preenchido vindo da DAO.
+            $clientModel = $clientModel->getById( (int) $_GET['id']); // obtendo o model preenchido vindo da DAO.
 
         include 'view/modules/Client/FormClient.php';
     }
