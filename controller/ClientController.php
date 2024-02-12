@@ -1,5 +1,9 @@
 <?php
 
+namespace App\controller;
+
+use App\model\ClientModel;
+
 // Classe responsável por processar as requisições do usuário.
 class ClientController{
     

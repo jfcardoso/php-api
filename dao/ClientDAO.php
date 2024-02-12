@@ -1,5 +1,10 @@
 <?php
 
+namespace App\dao;
+
+use App\model\ClientModel;
+use \PDO;
+
 // responsável por executar os SQL junto ao banco de dados.
 class ClientDAO{
 
@@ -82,7 +87,7 @@ class ClientDAO{
 
         $stmt->execute();
 
-        return $stmt->fetchObject("ClientModel"); // Retornando um objeto específico ClientModel
+        return $stmt->fetchObject("App\model\ClientModel"); // Retornando um objeto específico ClientModel
     }
     
     //Remove um registro da tabela client do banco de dados.    

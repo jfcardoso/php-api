@@ -1,5 +1,9 @@
 <?php
 
+namespace App\model;
+
+use App\dao\ClientDAO;
+
 /**
  * A camada model é responsável por transportar os dados da Controller até a DAO e vice-versa.
  * Também é atribuído a Model a validação dos dados da View e controle de acesso aos métodos

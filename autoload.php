@@ -2,7 +2,9 @@
 
 spl_autoload_register(function($class){
 
-    $classe_controller = 'controller/' . $class . '.php';
+    include '../' .$class .'.php';
+
+    /*$classe_controller = 'controller/' . $class . '.php';
     $classe_model = 'model/' . $class . '.php';
     $classe_dao = 'dao/' . $class . '.php';
 
@@ -12,5 +14,5 @@ spl_autoload_register(function($class){
         include $classe_model;
     }else if(file_exists($classe_dao)){
         include $classe_dao;
-    }
+    }*/
 });
