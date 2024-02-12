@@ -8,7 +8,7 @@ class ClientDAO{
     public function __construct(){
 
          // DSN (Data Source Name) onde o servidor MySQL será encontrado
-        $dsn = "mysql:host=localhost:3306;dbname=db_client";
+        $dsn = "mysql:host=localhost:3306;dbname=db_cliente";
 
         $this->conn = new PDO($dsn, 'root', 'admin@2024');
     }
@@ -16,7 +16,7 @@ class ClientDAO{
     // Método que recebe um model e extrai os dados para realizar o insert na tabela correspondente.
     public function insert(ClientModel $clientModel){
 
-        $sql = "INSERT INTO client (nome, sexo, cpf, data_nascimento, email, tel, cep, endereco, bairro, cidade, uf) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO cliente (nome, sexo, cpf, data_nascimento, email, tel, cep, endereco, bairro, cidade, uf) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -38,7 +38,7 @@ class ClientDAO{
     // recebe o Model preenchido e atualiza no banco de dados.
     public function update(ClientModel $clientModel){
 
-        $sql = "UPDATE client SET nome=?, sexo=?, cpf=?, data_nascimento=?, email=?, tel=?, cep=?, endereco=?, bairro=?, cidade=?, uf=? WHERE id=? ";
+        $sql = "UPDATE cliente SET nome=?, sexo=?, cpf=?, data_nascimento=?, email=?, tel=?, cep=?, endereco=?, bairro=?, cidade=?, uf=? WHERE id=? ";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -61,7 +61,7 @@ class ClientDAO{
     // retorna todos os registros da tabela client no banco de dados.
     public function select(){
 
-        $sql = "SELECT * FROM client ";
+        $sql = "SELECT * FROM cliente ";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -76,7 +76,7 @@ class ClientDAO{
 
         include_once 'model/ClientModel.php';
 
-        $sql = "SELECT * FROM client WHERE id = ?";
+        $sql = "SELECT * FROM cliente WHERE id = ?";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -90,7 +90,7 @@ class ClientDAO{
     //Remove um registro da tabela client do banco de dados.    
     public function delete(int $id)
     {
-        $sql = "DELETE FROM client WHERE id = ? ";
+        $sql = "DELETE FROM cliente WHERE id = ? ";
 
         $stmt = $this->conn->prepare($sql);
 

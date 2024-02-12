@@ -7,7 +7,7 @@
  */
 class ClientModel{
 
-    public $id, $nome, $sexo, $cpf, $data_nascimento, $email, $tel, $cep, $endereco, $bairro, $cidade, $uf, $created_at;
+    public $id, $nome, $sexo, $cpf, $data_nascimento, $email, $tel, $cep, $endereco, $bairro, $cidade, $uf;
     
     
     // Propriedade que armazenará o array retornado da DAO com a listagem dos clientes.    
@@ -20,10 +20,10 @@ class ClientModel{
 
         $dao = new ClientDAO();
 
-        if(empty($this->id)){            
+        if(empty($this->id)){ // Verificando se a propriedade id foi preenchida no model           
             $dao->insert($this);
         } else {
-            $dao->update($this); // Como existe um id, passando o model para ser atualizado.
+            $dao->update($this); // Como existe um id, passa o model para ser atualizado.
         }        
     }
     
