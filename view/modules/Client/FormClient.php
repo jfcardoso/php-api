@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Cliente</title>
     <style>
@@ -13,7 +14,7 @@
 <body>
     <fieldset>
         <legend>Cadastro de Cliente</legend>
-        <form method="POST" action="/client/form/save">
+        <form method="post" action="/client/form/save">
 
             <input type="hidden" value="<?= $clientModel->id ?>" name="id" />
 
