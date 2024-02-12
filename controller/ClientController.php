@@ -5,7 +5,7 @@ namespace App\controller;
 use App\model\ClientModel;
 
 // Classe responsável por processar as requisições do usuário.
-class ClientController{
+class ClientController extends Controller{
     
     // retorna uma view com a listagem dos clientes cadastrados
     public static function index(){       
@@ -13,7 +13,7 @@ class ClientController{
         $clientModel = new ClientModel();
         $clientModel->getAllRows();
 
-        include 'view/modules/Client/ListClient.php';
+      parent::render('Client/ListClient',$clientModel);           
     }
 
     // retorna uma view contendo um formulário para cadastro de cliente.
@@ -24,7 +24,7 @@ class ClientController{
         if(isset($_GET['id']))
             $clientModel = $clientModel->getById( (int) $_GET['id']); // obtendo o model preenchido vindo da DAO.
 
-        include 'view/modules/Client/FormClient.php';
+       parent::render('Client/FormClient', $clientModel);    
     }
 
     // preenche um model para que seja enviado ao BD para salvar.

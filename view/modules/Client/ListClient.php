@@ -45,7 +45,7 @@
         
         <?php if(count($clientModel->rows) == 0): ?>
             <tr>
-                <td colspan="5">Nenhum registro encontrado.</td>
+                <td colspan="13">Nenhum registro encontrado.</td>
             </tr>
         <?php endif ?>
     </table>

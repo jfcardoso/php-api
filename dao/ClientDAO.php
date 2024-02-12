@@ -6,16 +6,11 @@ use App\model\ClientModel;
 use \PDO;
 
 // responsável por executar os SQL junto ao banco de dados.
-class ClientDAO{
-
-    private $conn;
+class ClientDAO extends DAO{    
 
     public function __construct(){
 
-         // DSN (Data Source Name) onde o servidor MySQL será encontrado
-        $dsn = "mysql:host=localhost:3306;dbname=db_cliente";
-
-        $this->conn = new PDO($dsn, 'root', 'admin@2024');
+        parent::__construct(); // chamando o construtor da classe DAO
     }
 
     // Método que recebe um model e extrai os dados para realizar o insert na tabela correspondente.
