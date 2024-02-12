@@ -72,9 +72,7 @@ class ClientDAO{
     }
     
     // Retorna um registro específico da tabela client do banco de dados.    
-    public function selectById(int $id){
-
-        include_once 'model/ClientModel.php';
+    public function selectById(int $id){       
 
         $sql = "SELECT * FROM cliente WHERE id = ?";
 

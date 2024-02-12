@@ -14,9 +14,7 @@ class ClientModel{
     public $rows;
 
     //chama a DAO para gravar no banco de dados o model preenchido.
-    public function save(){
-
-        include 'dao/ClientDAO.php';
+    public function save(){       
 
         $dao = new ClientDAO();
 
@@ -27,18 +25,14 @@ class ClientModel{
         }        
     }
     
-    public function getAllRows()
-    {
-        include 'dao/ClientDAO.php';
+    public function getAllRows(){       
         
         $dao = new ClientDAO();
        
         $this->rows = $dao->select();
     }
 
-    public function getById(int $id){
-
-        include 'dao/ClientDAO.php';
+    public function getById(int $id){       
         
         $dao = new ClientDAO();
 
@@ -47,9 +41,7 @@ class ClientModel{
         return ($obj) ? $obj : new ClientModel();       
     }
 
-    public function delete(int $id){
-
-        include 'dao/ClientDAO.php';
+    public function delete(int $id){       
         
         $dao = new ClientDAO();
 
