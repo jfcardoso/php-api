@@ -1,6 +1,11 @@
 # API - PHP
 - Aplicação Web de cadastro de clientes utilizando o PHP e adotando como padrão de projetos o MVC.
 
+## Requisitos:
+- PHP >= 7.3.17
+- MySQL >= 5.6
+- Bootstrap >= 4.5.3
+
 ## Como ver funcionando:
 - Faça o Forward Engineer do Banco de Dados no MySQL Workbench
 - Abra a pasta App no VS Code e via terminal inicialize o servidor do PHP:
