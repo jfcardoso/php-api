@@ -24,9 +24,7 @@
         </symbol>
     </svg>
 
-    <title>Listagem de Clientes</title>
-
-    <!--<style> label, input{ display: block; } </style> -->    
+    <title>Listagem de Clientes</title>    
 </head>
 <body>
     <div class="modal-body">

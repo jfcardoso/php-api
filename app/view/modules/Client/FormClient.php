@@ -28,8 +28,20 @@
 </head>
 <body>
     <div class="modal-body">
-        <fieldset>
-            <legend>Cadastro de Cliente</legend>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 bg-warning justify-content-between p-3">
+                    CADASTRO DE CLIENTE
+                </div>
+                
+                <div class="col-md-2 bg-warning  justify-content-between p-3 d-flex">
+                    <button class="btn btn-sm btn-dark " data-toggle="modal" data-keyboard="false" onclick="window.location.href ='/client'">FECHAR</button>                   
+                </div>
+            </div>
+        </div>
+        
+        <fieldset>            
             <form method="post" id="insert_form" action="/client/form/save">
 
                 <div class="row">
@@ -99,25 +111,6 @@
 </body>
 
 </html>
-
-
-<!-- Modal ALERTA DE CADASTRO COM SUCESSO-->
-<div class="modal fade" id="sucessModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-
-            </div>
-            <div class="modal-body bg-success text text-center text-white">
-                CLIENTE CADASTRADO COM SUCESSO!
-            </div>
-            <div class="modal-footer">
-
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- ---------------------------------------------------------------------------------------------------------------- -->
 <script type="text/javascript">
