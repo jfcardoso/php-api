@@ -27,77 +27,99 @@
     <title>Cadastro de Cliente</title>     
 </head>
 <body>
-<div class="modal-body">
-    <fieldset>
-        <legend>Cadastro de Cliente</legend>
-        <form method="post" id="insert_form" action="/client/form/save">
+    <div class="modal-body">
+        <fieldset>
+            <legend>Cadastro de Cliente</legend>
+            <form method="post" id="insert_form" action="/client/form/save">
 
-            <div class="row">
-                <div class="col-md-10 col-sm-12">
-                    <label for="nome" class="col-form-label">Nome:</label>
-                    <input id="nome" name="nome" maxlength="50" class="form-control" value="<?= $clientModel->nome ?>" type="text"/>
+                <div class="row">
+                    <div class="col-md-10 col-sm-12">
+                        <label for="nome" class="col-form-label">Nome:</label>
+                        <input id="nome" name="nome" maxlength="45" class="form-control" value="<?= $clientModel->nome ?>" type="text"/>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label for="sexo" class="col-form-label">Sexo (M/F):</label>
+                        <input id="sexo" name="sexo" value="<?= $clientModel->sexo ?>" maxlength="1" class="form-control" type="text"/>
+                    </div>
                 </div>
-                <div class="col-md-2 col-sm-12">
-                    <label for="sexo" class="col-form-label">Sexo (M/F):</label>
-                    <input id="sexo" name="sexo" value="<?= $clientModel->sexo ?>" maxlength="2" class="form-control" type="text"/>
+                
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <label for="cpf" class="col-form-label">CPF:</label>
+                        <input id="cpf" name="cpf" maxlength="14" class="form-control" value="<?= $clientModel->cpf ?>" type="text"/>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <label for="data_nascimento"  class="col-form-label">Data de Nascimento:</label>
+                        <input id="data_nascimento" name="data_nascimento" class="form-control" value="<?= $clientModel->data_nascimento ?>" type="date"/>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label for="email" class="col-form-label">E-mail:</label>
+                        <input id="email" name="email" maxlength="80" class="form-control" value="<?= $clientModel->email ?>" type="email"/>
+                    </div>         
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <label for="cpf" class="col-form-label">CPF:</label>
-                    <input id="cpf" name="cpf" maxlength="30" class="form-control" value="<?= $clientModel->cpf ?>" type="text"/>
+                
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <label for="tel" class="col-form-label">Tel:</label>
+                        <input id="tel" name="tel" value="<?= $clientModel->tel ?>" type="tel" maxlength="50" class="form-control -10"/> 
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label for="cep" class="col-form-label">CEP:</label>
+                        <input id="cep" name="cep" value="<?= $clientModel->cep ?>" type="number" maxlength="50" class="form-control -10"/> 
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        <label for="endereco" class="col-form-label">Endereço:</label>
+                        <input id="endereco" name="endereco" class="form-control" value="<?= $clientModel->endereco ?>" type="text"/>                   
+                    </div>         
                 </div>
-                <div class="col-md-3 col-sm-12">
-                    <label for="data_nascimento"  class="col-form-label">Data de Nascimento:</label>
-                    <input id="data_nascimento" name="data_nascimento" class="form-control" value="<?= $clientModel->data_nascimento ?>" type="date"/>
+                
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <label for="bairro" class="col-form-label">Bairro:</label>
+                        <input id="bairro"  maxlength="50" class="form-control" name="bairro" value="<?= $clientModel->bairro ?>" type="text"/>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <label for="cidade" class="col-form-label">Cidade:</label>
+                        <input id="cidade"  maxlength="50" class="form-control" name="cidade" value="<?= $clientModel->cidade ?>" type="text"/>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label for="uf" class="col-form-label">UF:</label>
+                        <input id="uf" name="uf" class="form-control" value="<?= $clientModel->uf ?>" type="text"/>
+                    </div>         
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <label for="email" class="col-form-label">E-mail:</label>
-                    <input id="email" name="email" maxlength="30" class="form-control" value="<?= $clientModel->email ?>" type="email"/>
-                </div>         
-            </div>
-            
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <label for="tel" class="col-form-label">Tel:</label>
-                    <input id="tel" name="tel" value="<?= $clientModel->tel ?>" type="tel" maxlength="50" onkeypress="mask(this, $clientModel->tel);" onblur="mask(this, $clientModel->tel);" class="form-control -10"/> 
-                </div>
-                <div class="col-md-2 col-sm-12">
-                    <label for="cep" class="col-form-label">CEP:</label>
-                    <input id="cep" name="cep" value="<?= $clientModel->cep ?>" type="number" maxlength="50" class="form-control -10"/> 
-                </div>
-                <div class="col-md-7 col-sm-12">
-                    <label for="endereco" class="col-form-label">Endereço:</label>
-                    <input id="endereco" name="endereco" class="form-control" value="<?= $clientModel->endereco ?>" type="text"/>                   
-                </div>         
-            </div>
-            
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <label for="bairro" class="col-form-label">Bairro:</label>
-                    <input id="bairro"  maxlength="50" class="form-control" name="bairro" value="<?= $clientModel->bairro ?>" type="text"/>
-                </div>
-                <div class="col-md-3 col-sm-12">
-                    <label for="cidade" class="col-form-label">Cidade:</label>
-                    <input id="cidade"  maxlength="50" class="form-control" name="cidade" value="<?= $clientModel->cidade ?>" type="text"/>
-                </div>
-                <div class="col-md-2 col-sm-12">
-                    <label for="uf" class="col-form-label">UF:</label>
-                    <input id="uf" name="uf" class="form-control" value="<?= $clientModel->uf ?>" type="text"/>
-                </div>         
-            </div>
 
-            <div class="modal-footer">
-                <button type="submit">Salvar</button>
-            </div> 
-            
-            <input type="hidden"  value="<?= $clientModel->id ?>" name="id" />
-        </form>
-
-    </fieldset>
-</div>        
+                <div class="modal-footer">
+                    <button type="submit">Salvar</button>
+                </div> 
+                
+                <input type="hidden"  value="<?= $clientModel->id ?>" name="id" />
+            </form>
+        </fieldset>
+    </div>        
 </body>
 
-
 </html>
+
+
+<!-- Modal ALERTA DE CADASTRO COM SUCESSO-->
+<div class="modal fade" id="sucessModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+
+            </div>
+            <div class="modal-body bg-success text text-center text-white">
+                CLIENTE CADASTRADO COM SUCESSO!
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript">
+
+</script>

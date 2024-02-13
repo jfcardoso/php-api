@@ -29,60 +29,76 @@
     <!--<style> label, input{ display: block; } </style> -->    
 </head>
 <body>
+    <div class="modal-body">
 
-<table class="table table-bordered table-hover table-sm table-responsive-xl resultado_cliente">
-    <thead>
-        <tr class="bg-dark text text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 bg-warning justify-content-between p-3">
+                    LISTA DE CLIENTES CADASTRADOS
+                </div>
+                
+                <div class="col-md-2 bg-warning  justify-content-between p-3 d-flex">
+                    <button class="btn btn-sm btn-dark " data-toggle="modal" data-keyboard="false" onclick="window.location.href ='/client/form'">NOVO CLIENTE</button>                   
+                </div>
+            </div>
+        </div>
 
-            <th scope="col">ID</th>
-            <th scope="col">NOME</th>
-            <th scope="col">SEXO</th>
-            <th scope="col">CPF</th>
-            <th scope="col">DATA NASCIMENTO</th>
-            <th scope="col">EMAIL</th>
-            <th scope="col">TELEFONE</th>                        
-            <th scope="col">CEP</th>           
-            <th scope="col">ENDEREÇO</th>
-            <th scope="col">BAIRRO</th>
-            <th scope="col">CIDADE</th>
-            <th scope="col">UF</th>
-            <th scope="col" class="text text-center" colspan="2">AÇÕES</th>
-        </tr>
-    </thead>
+        <fieldset>             
+            <table class="table table-bordered table-hover table-sm table-responsive-xl resultado_cliente">
+                <thead>
+                    <tr class="bg-dark text text-white">
+
+                        <th scope="col">ID</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">SEXO</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">DATA NASCIMENTO</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">TELEFONE</th>                        
+                        <th scope="col">CEP</th>           
+                        <th scope="col">ENDEREÇO</th>
+                        <th scope="col">BAIRRO</th>
+                        <th scope="col">CIDADE</th>
+                        <th scope="col">UF</th>
+                        <th scope="col" class="text text-center" colspan="2">AÇÕES</th>
+                    </tr>
+                </thead>
     
-    <?php foreach($clientModel->rows as $item): ?>       
-       
-        <tbody>
-            <tr>           
-                <td><?= $item->id ?></td>
-                <td><?= $item->nome ?></a></td>
-                <td><?= $item->sexo ?></td>
-                <td><?= $item->cpf ?></td>               
-                <td><?= $item->data_nascimento = date('d/m/Y',  strtotime($item->data_nascimento)) ?></td>        
-                <td><?= $item->email ?></td>
-                <td><?= $item->tel ?></td>
-                <td><?= $item->cep ?></td>
-                <td><?= $item->endereco ?></td>
-                <td><?= $item->bairro ?></td>
-                <td><?= $item->cidade ?></td>
-                <td><?= $item->uf ?></td>   
-                <td class="text text-center">
-                    <a href="/client/form?id=<?= $item->id ?>"data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#editarCliente">
-                        <i class="far fa-edit text text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar"></i></a>
-                </td>
-                <td class="text text-center">
-                    <a href="/client/delete?id=<?= $item->id ?>" onClick="return confirm('Deseja realmente excluir o cliente?')">
-                        <i class="far fa-trash-alt text text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir"></i></a>
-                </td>
-            </tr>
-        </tbody>        
-    <?php endforeach ?>
+                <?php foreach($clientModel->rows as $item): ?>       
+                
+                    <tbody>
+                        <tr>           
+                            <td><?= $item->id ?></td>
+                            <td><?= $item->nome ?></a></td>
+                            <td><?= $item->sexo ?></td>
+                            <td><?= $item->cpf ?></td>               
+                            <td><?= $item->data_nascimento = date('d/m/Y',  strtotime($item->data_nascimento)) ?></td>        
+                            <td><?= $item->email ?></td>
+                            <td><?= $item->tel ?></td>
+                            <td><?= $item->cep ?></td>
+                            <td><?= $item->endereco ?></td>
+                            <td><?= $item->bairro ?></td>
+                            <td><?= $item->cidade ?></td>
+                            <td><?= $item->uf ?></td>   
+                            <td class="text text-center">
+                                <a href="/client/form?id=<?= $item->id ?>"data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#editarCliente">
+                                    <i class="far fa-edit text text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar"></i></a>
+                            </td>
+                            <td class="text text-center">
+                                <a href="/client/delete?id=<?= $item->id ?>" onClick="return confirm('Deseja realmente excluir o cliente?')">
+                                    <i class="far fa-trash-alt text text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>        
+                <?php endforeach ?>
 
-    <?php if(count($clientModel->rows) == 0): ?>
-            <tr>
-                <td colspan="13">Nenhum registro encontrado.</td>
-            </tr>
-        <?php endif ?>
-</table>   
+                <?php if(count($clientModel->rows) == 0): ?>
+                    <tr>
+                        <td colspan="13">Nenhum registro encontrado.</td>
+                    </tr>
+                <?php endif ?>
+            </table>
+        </fieldset>
+    </div>           
 </body>
 </html>
