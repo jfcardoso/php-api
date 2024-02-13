@@ -1,18 +1,20 @@
 <?php
 
-spl_autoload_register(function($class){
+spl_autoload_register(function($class){ 
 
-    include '../' .$class .'.php';
+    /**
+     * Defidindo o caminho absoluto até o arquivo que será incluído pelo PHP.
+     * A constante BASEDIR está definida no arquivo config.php. 
+     */    
+    $file =  BASEDIR . $class . '.php';
 
-    /*$classe_controller = 'controller/' . $class . '.php';
-    $classe_model = 'model/' . $class . '.php';
-    $classe_dao = 'dao/' . $class . '.php';
-
-    if(file_exists($classe_controller)){
-        include $classe_controller;
-    }else if(file_exists($classe_model)){
-        include $classe_model;
-    }else if(file_exists($classe_dao)){
-        include $classe_dao;
-    }*/
+      /**
+     * Utilizando a função file_exists para verificar se o arquivo existe
+     * de acordo com o caminho de BASEDIR e os namespaces descritos na classe.
+     */
+    if(file_exists($file)){       
+        include $file;
+    } else{
+        exit('Arquivo não encontrado:' . $file);
+    }   
 });

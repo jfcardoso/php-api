@@ -7,7 +7,7 @@ abstract class Controller{
 
     protected static function render($view, $clientModel = null){
 
-        $file_view = "view/modules/$view.php";
+        $file_view = VIEWS . $view . '.php';
         
         if (file_exists($file_view)){
            include $file_view;
