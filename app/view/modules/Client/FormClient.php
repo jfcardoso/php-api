@@ -40,14 +40,14 @@
                 </div>
             </div>
         </div>
-        
+
         <fieldset>            
             <form method="post" id="insert_form" action="/client/form/save">
 
                 <div class="row">
                     <div class="col-md-10 col-sm-12">
                         <label for="nome" class="col-form-label">Nome:</label>
-                        <input id="nome" name="nome" maxlength="45" class="form-control" value="<?= $clientModel->nome ?>" type="text"/>
+                        <input id="nome" name="nome" maxlength="80" class="form-control" value="<?= $clientModel->nome ?>" type="text"/>
                     </div>
                     <div class="col-md-2 col-sm-12">
                         <label for="sexo" class="col-form-label">Sexo (M/F):</label>
@@ -66,37 +66,37 @@
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="email" class="col-form-label">E-mail:</label>
-                        <input id="email" name="email" maxlength="80" class="form-control" value="<?= $clientModel->email ?>" type="email"/>
+                        <input id="email" name="email" maxlength="45" class="form-control" value="<?= $clientModel->email ?>" type="email"/>
                     </div>         
                 </div>
                 
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
                         <label for="tel" class="col-form-label">Tel:</label>
-                        <input id="tel" name="tel" value="<?= $clientModel->tel ?>" type="tel" maxlength="50" class="form-control -10"/> 
+                        <input id="tel" name="tel" value="<?= $clientModel->tel ?>" type="tel" maxlength="11" class="form-control -10"/> 
                     </div>
                     <div class="col-md-2 col-sm-12">
                         <label for="cep" class="col-form-label">CEP:</label>
-                        <input id="cep" name="cep" value="<?= $clientModel->cep ?>" type="number" maxlength="50" class="form-control -10"/> 
+                        <input placeholder="somente nº" id="cep" name="cep" value="<?= $clientModel->cep ?>" type="text" maxlength="9" class="form-control -10"/> 
                     </div>
                     <div class="col-md-7 col-sm-12">
                         <label for="endereco" class="col-form-label">Endereço:</label>
-                        <input id="endereco" name="endereco" class="form-control" value="<?= $clientModel->endereco ?>" type="text"/>                   
+                        <input id="endereco" name="endereco" class="form-control" maxlength="255" value="<?= $clientModel->endereco ?>" type="text"/>                   
                     </div>         
                 </div>
                 
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
                         <label for="bairro" class="col-form-label">Bairro:</label>
-                        <input id="bairro"  maxlength="50" class="form-control" name="bairro" value="<?= $clientModel->bairro ?>" type="text"/>
+                        <input id="bairro"  maxlength="45" class="form-control" name="bairro" value="<?= $clientModel->bairro ?>" type="text"/>
                     </div>
                     <div class="col-md-3 col-sm-12">
                         <label for="cidade" class="col-form-label">Cidade:</label>
-                        <input id="cidade"  maxlength="50" class="form-control" name="cidade" value="<?= $clientModel->cidade ?>" type="text"/>
+                        <input id="cidade"  maxlength="80" class="form-control" name="cidade" value="<?= $clientModel->cidade ?>" type="text"/>
                     </div>
                     <div class="col-md-2 col-sm-12">
                         <label for="uf" class="col-form-label">UF:</label>
-                        <input id="uf" name="uf" class="form-control" value="<?= $clientModel->uf ?>" type="text"/>
+                        <input id="uf" name="uf" class="form-control" maxlength="2" value="<?= $clientModel->uf ?>" type="text"/>
                     </div>         
                 </div>
 
@@ -107,12 +107,18 @@
                 <input type="hidden"  value="<?= $clientModel->id ?>" name="id" />
             </form>
         </fieldset>
-    </div>        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script type="text/javascript">    
+        $(document).ready(function(){   
+            $('#cep').mask('00000-000');   
+            $('#tel').mask('(00) 00000-0000');    
+            $('#cpf').mask('000.000.000-00', {reverse: true});    
+        });
+    </script>
+
 </body>
 
 </html>
-
-<!-- ---------------------------------------------------------------------------------------------------------------- -->
-<script type="text/javascript">
-
-</script>
