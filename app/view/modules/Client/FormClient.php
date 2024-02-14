@@ -24,6 +24,8 @@
         </symbol>
     </svg>
 
+    <style> label#required:after { content:" *"; color: red; } </style>
+
     <title>Cadastro de Cliente</title>     
 </head>
 <body>
@@ -46,23 +48,23 @@
 
                 <div class="row">
                     <div class="col-md-10 col-sm-12">
-                        <label for="nome" class="col-form-label">Nome:</label>
-                        <input id="nome" name="nome" maxlength="80" class="form-control" value="<?= $clientModel->nome ?>" type="text"/>
+                        <label id="required" for="nome" class="col-form-label">Nome:</label>
+                        <input id="nome" name="nome" maxlength="80" class="form-control" required value="<?= $clientModel->nome ?>" type="text"/>
                     </div>
                     <div class="col-md-2 col-sm-12">
-                        <label for="sexo" class="col-form-label">Sexo (M/F):</label>
-                        <input id="sexo" name="sexo" oninput="handleInput(event)" value="<?= $clientModel->sexo ?>" maxlength="1" class="form-control" type="text"/>
+                        <label id="required" for="sexo" class="col-form-label">Sexo (M/F):</label>
+                        <input id="sexo" name="sexo" oninput="handleInput(event)" required value="<?= $clientModel->sexo ?>" maxlength="1" class="form-control" type="text"/>
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
-                        <label for="cpf" class="col-form-label">CPF:</label>
-                        <input id="cpf" name="cpf" maxlength="14" class="form-control" value="<?= $clientModel->cpf ?>" type="text"/>
+                        <label id="required" for="cpf" class="col-form-label">CPF:</label>
+                        <input id="cpf" name="cpf" maxlength="14" class="form-control" required value="<?= $clientModel->cpf ?>" type="text"/>
                     </div>
                     <div class="col-md-3 col-sm-12">
-                        <label for="data_nascimento"  class="col-form-label">Data de Nascimento:</label>
-                        <input id="data_nascimento" name="data_nascimento" class="form-control" value="<?= $clientModel->data_nascimento ?>" type="date"/>
+                        <label id="required" for="data_nascimento"  class="col-form-label">Data de Nascimento:</label>
+                        <input id="data_nascimento" name="data_nascimento" class="form-control" required value="<?= $clientModel->data_nascimento ?>" type="date"/>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="email" class="col-form-label">E-mail:</label>
@@ -72,31 +74,31 @@
                 
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
-                        <label for="tel" class="col-form-label">Tel:</label>
-                        <input id="tel" name="tel" value="<?= $clientModel->tel ?>" type="tel" maxlength="11" class="form-control -10"/> 
+                        <label id="required" for="tel" class="col-form-label">Tel:</label>
+                        <input id="tel" name="tel" required value="<?= $clientModel->tel ?>" type="tel" maxlength="11" class="form-control -10"/> 
                     </div>
                     <div class="col-md-2 col-sm-12">
-                        <label for="cep" class="col-form-label">CEP:</label>
-                        <input placeholder="somente nº" id="cep" name="cep" value="<?= $clientModel->cep ?>" type="text" maxlength="9" class="form-control -10"/> 
+                        <label id="required" for="cep" class="col-form-label">CEP:</label>
+                        <input placeholder="somente nº" id="cep" name="cep" required value="<?= $clientModel->cep ?>" type="text" maxlength="9" class="form-control -10"/> 
                     </div>
                     <div class="col-md-7 col-sm-12">
-                        <label for="endereco" class="col-form-label">Endereço:</label>
-                        <input id="endereco" name="endereco" class="form-control" maxlength="255" value="<?= $clientModel->endereco ?>" type="text"/>                   
+                        <label id="required" for="endereco" class="col-form-label">Endereço:</label>
+                        <input id="endereco" name="endereco" class="form-control" required maxlength="255" value="<?= $clientModel->endereco ?>" type="text"/>                   
                     </div>         
                 </div>
                 
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
-                        <label for="bairro" class="col-form-label">Bairro:</label>
-                        <input id="bairro"  maxlength="45" class="form-control" name="bairro" value="<?= $clientModel->bairro ?>" type="text"/>
+                        <label id="required" for="bairro" class="col-form-label">Bairro:</label>
+                        <input id="bairro"  maxlength="45" class="form-control" required name="bairro" value="<?= $clientModel->bairro ?>" type="text"/>
                     </div>
                     <div class="col-md-3 col-sm-12">
-                        <label for="cidade" class="col-form-label">Cidade:</label>
-                        <input id="cidade"  maxlength="80" class="form-control" name="cidade" value="<?= $clientModel->cidade ?>" type="text"/>
+                        <label id="required" for="cidade" class="col-form-label">Cidade:</label>
+                        <input id="cidade"  maxlength="80" class="form-control" required name="cidade" value="<?= $clientModel->cidade ?>" type="text"/>
                     </div>
                     <div class="col-md-2 col-sm-12">
-                        <label for="uf" class="col-form-label">UF:</label>
-                        <input id="uf" name="uf" class="form-control" oninput="handleInput(event)" maxlength="2" value="<?= $clientModel->uf ?>" type="text"/>
+                        <label id="required" for="uf" class="col-form-label">UF:</label>
+                        <input id="uf" name="uf" class="form-control"  required oninput="handleInput(event)" maxlength="2" value="<?= $clientModel->uf ?>" type="text"/>
                     </div>         
                 </div>
 
