@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-2 col-sm-12">
                         <label for="sexo" class="col-form-label">Sexo (M/F):</label>
-                        <input id="sexo" name="sexo" value="<?= $clientModel->sexo ?>" maxlength="1" class="form-control" type="text"/>
+                        <input id="sexo" name="sexo" oninput="handleInput(event)" value="<?= $clientModel->sexo ?>" maxlength="1" class="form-control" type="text"/>
                     </div>
                 </div>
                 
@@ -96,7 +96,7 @@
                     </div>
                     <div class="col-md-2 col-sm-12">
                         <label for="uf" class="col-form-label">UF:</label>
-                        <input id="uf" name="uf" class="form-control" maxlength="2" value="<?= $clientModel->uf ?>" type="text"/>
+                        <input id="uf" name="uf" class="form-control" oninput="handleInput(event)" maxlength="2" value="<?= $clientModel->uf ?>" type="text"/>
                     </div>         
                 </div>
 
@@ -122,3 +122,14 @@
 </body>
 
 </html>
+<!-------------------------------------------------------------------------------------------------------------------->
+<script>
+   // converte de minúscula para maiúscula 
+   function handleInput(e) {
+    var ss = e.target.selectionStart;
+    var se = e.target.selectionEnd;
+    e.target.value = e.target.value.toUpperCase();
+    e.target.selectionStart = ss;
+    e.target.selectionEnd = se;
+}
+</script>
