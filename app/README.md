@@ -6,7 +6,10 @@
 - MySQL >= 5.6
 - Bootstrap >= 4.5.3
 
-## Como ver funcionando:
+## Para ver funcionando:
+https://php-api-jfc.000webhostapp.com/
+
+## Como rodar localmente:
 - Faça o Forward Engineer do Banco de Dados no MySQL Workbench
 - Abra a pasta App no VS Code e via terminal inicialize o servidor do PHP:
  `php -S localhost:8000`
